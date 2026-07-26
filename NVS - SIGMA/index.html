@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NVS SIGMA - Central de Operações</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="img/logo.png" alt="NVS SIGMA">
+        </div>
+
+        <div class="empresa">
+            <h2>NVS SIGMA</h2>
+            <p>Central de Operações</p>
+        </div>
+
+        <div class="status-sistema">
+            <span class="online"></span>
+            <span>Sistema Online</span>
+        </div>
+
+        <nav class="menu">
+
+            <button id="menuDashboard"
+                    class="menu-item ativo">
+
+                🏠 Dashboard
+
+            </button>
+
+            <button id="menuMaquinas"
+                    class="menu-item">
+
+                🏭 Máquinas
+
+            </button>
+
+            <button id="menuSupervisor"
+                    class="menu-item">
+
+                👨‍💼 Supervisor
+
+            </button>
+
+            <button id="menuRelatorios"
+                    class="menu-item">
+
+                📊 Relatórios
+
+            </button>
+
+        </nav>
+
+        <div class="versao">
+
+            Versão 2.0
+
+        </div>
+
+    </aside>
+
+    <!-- ================= CONTEÚDO ================= -->
+
+    <main class="principal">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="titulo">
+
+                <h1>Central de Operações</h1>
+
+                <p>Monitoramento em Tempo Real</p>
+
+            </div>
+
+            <div class="informacoes">
+
+                <div id="data" class="data">
+
+                    --/--/----
+
+                </div>
+
+                <div id="hora" class="hora">
+
+                    --:--:--
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- RESUMO -->
+
+        <section class="resumo">
+
+            <div class="card-resumo">
+
+                <span class="icone">🟢</span>
+
+                <div>
+
+                    <h3>Produzindo</h3>
+
+                    <strong id="qtdProduzindo">0</strong>
+
+                </div>
+
+            </div>
+
+            <div class="card-resumo">
+
+                <span class="icone">🟡</span>
+
+                <div>
+
+                    <h3>Setup</h3>
+
+                    <strong id="qtdSetup">0</strong>
+
+                </div>
+
+            </div>
+
+            <div class="card-resumo">
+
+                <span class="icone">🔴</span>
+
+                <div>
+
+                    <h3>Paradas</h3>
+
+                    <strong id="qtdParadas">0</strong>
+
+                </div>
+
+            </div>
+
+            <div class="card-resumo">
+
+                <span class="icone">🏭</span>
+
+                <div>
+
+                    <h3>Linhas</h3>
+
+                    <strong id="qtdLinhas">0</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= CONTEÚDO ================= -->
+
+        <section id="conteudoPrincipal">
+
+            <!-- DASHBOARD -->
+
+            <section id="dashboard"
+                     class="dashboard">
+
+            </section>
+
+            <!-- ================= TELA MÁQUINAS ================= -->
+
+            <section id="maquinas"
+                     class="pagina"
+                     style="display:none;">
+
+                <div class="pagina-maquinas">
+
+                    <div class="painel-maquina">
+
+                        <div class="painel-esquerda">
+
+                            <h2 id="nomeMaquina">
+
+                                DOSADORA 01
+
+                            </h2>
+
+                            <span id="statusMaquina"
+                                  class="status-card produzindo">
+
+                                🟢 PRODUZINDO
+
+                            </span>
+
+                        </div>
+
+                        <div class="painel-direita">
+
+                            <label>
+
+                                Máquina
+
+                            </label>
+
+                            <select id="maquinaSelecionada">
+
+                                <option value="1">Dosadora 01</option>
+
+                                <option value="2">Dosadora 02</option>
+
+                                <option value="3">Dosadora 03</option>
+
+                                <option value="4">Plissadeira 01</option>
+
+                                <option value="5">Plissadeira 02</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <!-- A PARTIR DAQUI COMEÇA O CARD DE PRODUÇÃO -->
+
+                                        <!-- ================= CARD DE PRODUÇÃO ================= -->
+
+                    <div class="card-producao">
+
+                        <!-- Faixa Superior -->
+
+                        <div id="faixaStatus"
+                             class="faixa-status produzindo">
+                        </div>
+
+                        <!-- Cabeçalho -->
+
+                        <div class="cabecalho-card">
+
+                            <div>
+
+                                <h2>Informações da Produção</h2>
+
+                                <small class="subtitulo-card">
+
+                                    Linha de Produção
+
+                                </small>
+
+                            </div>
+
+                            <span id="statusMaquinaCard"
+                                  class="status-card produzindo">
+
+                                🟢 PRODUZINDO
+
+                            </span>
+
+                        </div>
+
+                        <!-- Banner -->
+
+                        <div id="bannerStatus"
+                             class="banner-status produzindo">
+
+                            <span id="tituloStatus">
+
+                                🟢 MÁQUINA PRODUZINDO
+
+                            </span>
+
+                            <small id="descricaoStatus">
+
+                                Produção operando normalmente.
+
+                            </small>
+
+                        </div>
+
+                        <!-- Informações -->
+
+                        <div class="grid-informacoes">
+
+                            <div class="info-box">
+
+                                <span class="titulo-info">
+
+                                    👤 Operador
+
+                                </span>
+
+                                <strong id="operador">
+
+                                    Carlos Silva
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-box">
+
+                                <span class="titulo-info">
+
+                                    📋 OP
+
+                                </span>
+
+                                <strong id="opAtual">
+
+                                    -
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-box">
+
+                                <span class="titulo-info">
+
+                                    📦 Produto
+
+                                </span>
+
+                                <strong id="produtoAtual">
+
+                                    -
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-box">
+
+                                <span class="titulo-info">
+
+                                    🎯 Meta
+
+                                </span>
+
+                                <strong id="metaAtual">
+
+                                    -
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-box">
+
+                                <span class="titulo-info">
+
+                                    ✅ Produzido
+
+                                </span>
+
+                                <strong id="produzidoAtual">
+
+                                    -
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-box">
+
+                                <span class="titulo-info">
+
+                                    ⚡ Eficiência
+
+                                </span>
+
+                                <strong id="percentual">
+
+                                    0%
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Barra -->
+
+                        <div class="producao">
+
+                            <div class="producao-topo">
+
+                                <span>
+
+                                    Progresso da Produção
+
+                                </span>
+
+                                <strong id="percentualTopo">
+
+                                    0%
+
+                                </strong>
+
+                            </div>
+
+                            <div class="barra-producao">
+
+                                <div id="barraProgresso"
+                                     class="barra-valor"
+                                     style="width:0%;">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Botões -->
+
+                        <div class="acoes-maquina">
+
+                            <button class="btn-verde"
+                                    onclick="alterarStatus('PRODUZINDO')">
+
+                                🟢 PRODUZINDO
+
+                            </button>
+
+                            <button class="btn-amarelo"
+                                    onclick="alterarStatus('PARADA_MOTIVO')">
+
+                                🟡 PARADA COM MOTIVO
+
+                            </button>
+
+                            <button class="btn-vermelho"
+                                    onclick="alterarStatus('PARADA')">
+
+                                🔴 PARADA
+
+                            </button>
+
+                            <button class="btn-azul"
+                                    onclick="alterarStatus('SETUP')">
+
+                                🔵 SETUP
+
+                            </button>
+
+                        </div>
+
+                        <!-- Histórico -->
+
+                        <div class="historico-eventos">
+
+                            <h3>
+
+                                📋 Histórico de Eventos
+
+                            </h3>
+
+                            <div id="listaHistorico">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+                    <!-- ================= FOOTER ================= -->
+
+        <footer class="footer">
+
+            <div>
+
+                Sistema Online
+
+            </div>
+
+            <div>
+
+                Versão 2.0
+
+            </div>
+
+            <div id="ultimaAtualizacao">
+
+                Última atualização: --
+
+            </div>
+
+            <div id="tempoOnline">
+
+                Tempo Online: --
+
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- ================= MODAL ================= -->
+
+<div id="modal" class="modal">
+
+    <div class="modal-conteudo">
+
+        <div class="modal-header">
+
+            <h2 id="tituloModal">
+
+                Informações da Linha
+
+            </h2>
+
+            <span id="btnFechar"
+                  class="fechar">
+
+                &times;
+
+            </span>
+
+        </div>
+
+        <div id="conteudoModal"
+             class="modal-body">
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/dados.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

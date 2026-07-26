@@ -1,0 +1,107 @@
+section class="tela-maquinas">
+
+    <div class="cabecalho-tela">
+
+        <h1>Máquinas</h1>
+
+        <div class="seletor-linha">
+
+    <label>Linha de Produção</label>
+
+    <select id="maquinaSelecionada">
+
+    <option value="1">L1</option>
+    <option value="2">L2</option>
+    <option value="3">L3</option>
+    <option value="4">L4</option>
+    <option value="5">L5</option>
+
+</select>
+
+</div>
+
+    </div>
+
+    <div class="card-maquina">
+
+    <h2 id="nomeMaquina">
+        DOSADORA 01
+    </h2>
+
+    <div id="statusMaquina"
+         class="status-maquina status-verde">
+
+        🟢 PRODUZINDO
+
+    </div>
+
+        <div class="dados-maquina">
+
+    <div class="item">
+        <span>Operador</span>
+        <strong id="operador">Carlos Silva</strong>
+    </div>
+
+    <div class="item">
+        <span>OP Atual</span>
+        <strong id="opAtual"></strong>
+    </div>
+
+    <div class="item">
+        <span>Produto</span>
+        <strong id="produtoAtual"></strong>
+    </div>
+
+    <div class="item">
+        <span>Meta</span>
+        <strong id="metaAtual"></strong>
+    </div>
+
+    <div class="item">
+        <span>Produzido</span>
+        <strong id="produzidoAtual"></strong>
+    </div>
+
+</div>
+
+<div class="producao">
+
+    <div class="barra">
+        <div id="barraProgresso" class="barra-preenchimento"></div>
+    </div>
+
+    <span id="percentual">0%</span>
+
+</div>
+
+        <div class="tempo">
+
+            <span>Tempo de Produção</span>
+
+            <h2>02:15:43</h2>
+
+        </div>
+
+        <div class="acoes">
+
+            <button id="btnProduzir">
+                ▶ Simular Produção
+            </button>
+
+            <button id="btnParar">
+                ⏸ Simular Parada
+            </button>
+
+            <button id="btnMotivo">
+                🔵 Simular Motivo
+            </button>
+
+            <button id="btnFinalizar">
+                ✔ Finalizar OP
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
